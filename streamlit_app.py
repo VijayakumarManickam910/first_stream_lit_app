@@ -1,4 +1,5 @@
-import streamlit
+import streamlit as st
 
-streamlit.title ('My Parents New Healthy Diner')
-streamlit.paragraph(' Morning Breakfast')
+st.title ('My Parents New Healthy Diner')
+st.write(' Morning Breakfast')
+st.write('DOAS','\n', "idly",'\n', 'poori')
