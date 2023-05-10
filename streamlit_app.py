@@ -17,6 +17,7 @@ fruits_selected = st.multiselect("Pick some fruits:",  list(my_fruit_list.index)
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 st.dataframe(fruits_to_show)
 
+pip install snowflake-connector-python
 import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
