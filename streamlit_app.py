@@ -29,10 +29,12 @@ st.write('The user entered ', fruit_choice)
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
-
-
-
-
+pip install --upgrade snowflake-connector-python
+pip install --upgrade charset-normalizer==2.0.0
+pip install --upgrade urllib3==1.26.7
+python -m venv myenv
+myenv\Scripts\activate
+python -m pip install --upgrade pip
 
 import snowflake.connector
 
