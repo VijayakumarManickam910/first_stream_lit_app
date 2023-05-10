@@ -19,22 +19,20 @@ fruits_selected = st.multiselect("Pick some fruits:", list(my_fruit_list.index),
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # Display the table on the page.
-st.dataframe(my_fruit_list)
+st.dataframe(fruits_to_show)
 
 # New section to display fruityvice api response
-st.header('Fruityvice Fruit Advice')
+st.header('Fruityvice Fruit Advice!')
 fruit_choice = st.text_input('What fruit would you like information about?','Kiwi')
 st.write('The user entered ', fruit_choice)
 
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
-pip install --upgrade snowflake-connector-python
-pip install --upgrade charset-normalizer==2.0.0
-pip install --upgrade urllib3==1.26.7
-python -m venv myenv
-myenv\Scripts\activate
-python -m pip install --upgrade pip
+# write your own comment -what does the next line do? 
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# write your own comment - what does this do?
+st.dataframe(fruityvice_normalized)
 
 import snowflake.connector
 
